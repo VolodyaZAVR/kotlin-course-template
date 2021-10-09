@@ -1,6 +1,15 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+typealias UserId = String
 
-    // Try adding program arguments at Run/Debug configuration
-    println("Program arguments: ${args.joinToString()}")
+class User(
+    val id: UserId,
+    private val firstName: UserId,
+    private val lastName: UserId
+) {
+    fun getFullName() : String = "$id $firstName $lastName"
+}
+
+
+fun main() {
+    val user = User("15", "Ivan","Usovich")
+    println(user.getFullName())
 }
